@@ -34,209 +34,243 @@ Publish the website in the LocalHost.
 <!DOCTYPE html>
 <html>
 <head>
-<title>Camu Timetable</title>
+<title>CAMU Schedule</title>
+
+<!-- Bootstrap CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style>
 
 body{
-margin:0;
-font-family:Segoe UI;
-background:#f5f6f8;
+background:#f3f4f6;
+font-family: Arial;
 }
 
-.header{
+/* Sidebar */
+
+.sidebar{
 background:#ffffff;
-padding:15px 30px;
-font-size:20px;
-font-weight:600;
-border-bottom:1px solid #ddd;
-}
-
-.container{
-display:flex;
-}
-
-/* LEFT ICON BAR */
-
-.iconbar{
-width:70px;
-background:#f0f3f6;
 height:100vh;
-display:flex;
-justify-content:center;
+border-right:1px solid #ddd;
 padding-top:20px;
 }
 
-.home{
-background:#2fa4d7;
-width:45px;
-height:45px;
-border-radius:12px;
+.home-icon{
+width:50px;
+height:50px;
+background:#3da5f4;
+color:white;
 display:flex;
 align-items:center;
 justify-content:center;
-color:white;
-font-size:22px;
+border-radius:10px;
+margin:auto;
+margin-bottom:30px;
 }
 
-/* SIDEBAR */
-
-.sidebar{
-width:240px;
-background:white;
-border-right:1px solid #ddd;
+.menu li{
+list-style:none;
+padding:12px 20px;
+color:#666;
+cursor:pointer;
 }
 
-/* LOGO SECTION */
-
-.logo{
-text-align:center;
-padding:20px;
-border-bottom:1px solid #eee;
+.menu li:hover{
+background:#f0f7ff;
 }
 
-.logo img{
-width:150px;
-}
-
-/* MENU */
-
-.menu a{
-display:block;
-padding:12px 25px;
-text-decoration:none;
-color:#555;
-}
-
-.menu a.active{
-border:1px solid #2fa4d7;
+.active{
+background:#e6f2ff;
 border-radius:6px;
-margin:5px 15px;
-color:#2fa4d7;
 }
 
-/* MAIN */
+/* Header */
 
-.main{
-flex:1;
+.header{
+background:white;
+padding:15px 25px;
+border-bottom:1px solid #ddd;
+}
+
+.header h4{
+margin:0;
+}
+
+/* Content */
+
+.content{
 padding:25px;
 }
 
-.toprow{
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* Logo */
+
+.logo{
+width:160px;
 }
 
-.weekly{
-background:#f1f1f1;
-padding:8px 16px;
-border-radius:20px;
-}
+/* Semester */
 
 .semester{
-font-weight:600;
+font-size:16px;
+font-weight:bold;
+margin-top:10px;
 }
 
-/* DATE */
+/* Date */
 
-.datebar{
+.date-nav{
 text-align:center;
 font-size:22px;
 margin:20px 0;
 }
 
-/* CARDS */
+.week-btn{
+float:right;
+margin-top:-30px;
+}
+
+/* Schedule Cards */
 
 .card{
 background:white;
-padding:20px;
-margin-bottom:12px;
+padding:18px;
 border-radius:10px;
-box-shadow:0 1px 4px rgba(0,0,0,0.08);
+margin-bottom:15px;
+box-shadow:0 1px 3px rgba(0,0,0,0.08);
 }
 
-.subject{
-font-weight:600;
-margin-bottom:5px;
+.card h4{
+margin-top:0;
+font-size:16px;
+font-weight:bold;
 }
 
-.time{
-color:#555;
-font-size:14px;
+.card p{
+margin:3px 0;
+color:#666;
 }
 
 </style>
+
 </head>
 
 <body>
 
+<div class="container-fluid">
+
+<div class="row">
+
+<!-- Sidebar -->
+
+<div class="col-sm-2 sidebar">
+
+<div class="home-icon">
+<span class="glyphicon glyphicon-home"></span>
+</div>
+
+<ul class="menu">
+
+<li>Reports</li>
+<li>Progress report</li>
+<li>Assessments</li>
+<li>Holidays</li>
+<li class="active">Timetable</li>
+<li>Teaching content</li>
+<li>Leave</li>
+<li>Services</li>
+
+</ul>
+
+</div>
+
+<!-- Main Area -->
+
+<div class="col-sm-10">
+
 <div class="header">
-Saveetha Engineering College (Autonomous)
+<h4>Saveetha Engineering College (Autonomous)</h4>
 </div>
 
-<div class="container">
+<div class="content">
 
+<div class="row">
 
+<div class="col-sm-3 text-center">
 
-<div class="sidebar">
-
-<div class="logo">
-<img src="photo.png">
+<img src="Screenshot 2026-03-08 191716.png" class="logo">
 </div>
 
-<div class="menu">
-<a href="#">Reports</a>
-<a href="#">Progress report</a>
-<a href="#">Assessments</a>
-<a href="#">Holidays</a>
-<a class="active" href="#">Timetable</a>
-<a href="#">Teaching content</a>
-<a href="#">Leave</a>
-<a href="#">Services</a>
-</div>
+<div class="col-sm-9">
+
+<div class="semester">EVEN I 2025-2026</div>
+
+<button class="btn btn-default week-btn">Weekly schedule</button>
+
+<div class="date-nav">
+
+<span class="glyphicon glyphicon-chevron-left"></span>
+
+16 Mar 2026
+
+<span class="glyphicon glyphicon-chevron-right"></span>
 
 </div>
 
-<div class="main">
+<!-- Schedule -->
 
-<div class="toprow">
-<div class="semester">EVEN | 2025-2026</div>
-<div class="weekly">Weekly schedule</div>
-</div>
+<div class="card">
 
-<div class="datebar">
-< 16 Mar 2026 >
+<h4>Fundamentals of Web Application Development (19AI414) (5452)</h4>
+
+<p>10:00 AM - 11:00 AM (60 min) VIJAYAN P</p>
+
+<p>5452</p>
+
+<p><b>Attendance recorded</b></p>
+
 </div>
 
 <div class="card">
-<div class="subject">Fundamentals of Web Application Development (19AI414) (5452)</div>
-<div class="time">10:00 AM - 11:00 AM (60 min) | VIJAYAN P</div>
-<div class="time">5452</div>
-<div class="time">Attendance recorded</div>
+
+<h4>Fundamentals of Web Application Development (19AI414) (5452)</h4>
+
+<p>11:00 AM - 12:00 PM (60 min) VIJAYAN P</p>
+
+<p>5452</p>
+
 </div>
 
 <div class="card">
-<div class="subject">Fundamentals of Web Application Development (19AI414) (5452)</div>
-<div class="time">11:00 AM - 12:00 PM (60 min) | VIJAYAN P</div>
-<div class="time">5452</div>
-<div class="time">Attendance recorded</div>
+
+<h4>Python Programming (19AI301) (3653)</h4>
+
+<p>1:00 PM - 2:00 PM (60 min) RAJE A</p>
+
+<p>2331</p>
+
 </div>
 
 <div class="card">
-<div class="subject">Python Programming (19AI301) (3653)</div>
-<div class="time">1:00 PM - 2:00 PM (60 min) |  RAJE A</div>
-<div class="time">3653</div>
-<div class="time">Attendance recorded</div>
+
+<h4>Python Programming (19AI301) (3653)</h4>
+
+<p>2:00 PM - 3:00 PM (60 min) RAJE A</p>
+<p>2331</p>
+
+<p><b>Attendance recorded</b></p>
+
+
 </div>
 
-<div class="card">
-<div class="subject">Python Programming (19AI301) (3653)</div>
-<div class="time">2:00 PM - 3:00 PM (60 min) | RAJE A</div>
-<div class="time">3653</div>
-<div class="time">Attendance recorded</div>
 </div>
 
+</div>
+
+</div>
+
+</div>
 
 </div>
 
